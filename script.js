@@ -514,6 +514,9 @@ Contactez-nous pour plus d'informations →
   // Validation et envoi du formulaire de contact
   document.getElementById('contactForm').addEventListener('submit', validateAndSubmit);
 
+  // Initialisation d'EmailJS au démarrage
+  emailjs.init(config.emailjs.publicKey);
+
   function validateAndSubmit(event) {
     event.preventDefault();
     
@@ -546,7 +549,6 @@ Contactez-nous pour plus d'informations →
     submitButton.textContent = 'Envoi en cours...';
     submitButton.disabled = true;
 
-    // Configuration EmailJS pour GitHub Pages
     const templateParams = {
         from_name: name,
         to_email: "contactdigitaria@gmail.com",
