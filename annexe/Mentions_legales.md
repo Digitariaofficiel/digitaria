@@ -4,8 +4,8 @@
 
 **Nom du site** : Digitaria  
 **Statut** : Entreprise individuelle  
-**Responsable de la publication** : Maxime  
-**Adresse** : Disponible sur demande  
+**Responsable de la publication** : Directeur de Digitaria  
+**Code postal** : 1700, Fribourg  
 **Email de contact** : contactdigitaria@gmail.com  
 **Nom de domaine** : [https://www.digitaria.ch](https://www.digitaria.ch)
 
