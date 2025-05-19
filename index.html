@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="fr" style="scroll-behavior: smooth; scroll-padding-top: 0;">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="./media/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./media/favicon.svg" />
+  <link rel="shortcut icon" href="./media/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./media/apple-touch-icon.png" />
+  <link rel="manifest" href="./media/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitaria - Créons ensemble votre présence digitale</title>
+  <!-- Remplacer le CDN Tailwind par une version locale -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: "#3b82f6", secondary: "#10b981" },
+          borderRadius: {
+            none: "0px",
+            sm: "4px",
+            DEFAULT: "8px",
+            md: "12px",
+            lg: "16px",
+            xl: "20px",
+            "2xl": "24px",
+            "3xl": "32px",
+            full: "9999px",
+            button: "16px",
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="./config.js"></script>
+  <script>
+    (function () {
+      try {
+        emailjs.init(config.emailjs.publicKey);
+        console.log('EmailJS initialized successfully');
+      } catch (error) {
+        console.error('EmailJS initialization error:', error);
+      }
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./script.js" defer></script>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+</head>
+
+<body class="bg-white">
+  <!-- Header -->
+  <header class="fixed w-full bg-white shadow-sm z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#accueil" class="h-12"><img src="./media/image.png" alt="Logo" class="h-full w-auto"></a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#accueil" class="text-gray-800 hover:text-primary font-medium transition">Accueil</a>
+        <a href="#services" class="text-gray-800 hover:text-primary font-medium transition">Services</a>
+        <a href="#projets" class="text-gray-800 hover:text-primary font-medium transition">Projets</a>
+        <a href="#apropos" class="text-gray-800 hover:text-primary font-medium transition">À propos</a>
+        <a href="#contact" class="text-gray-800 hover:text-primary font-medium transition">Contact</a>
+        <a href="#faq" class="text-gray-800 hover:text-primary font-medium transition">FAQ</a>
+        <a href="#contact"
+          class="ml-4 bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-primary/90 transition whitespace-nowrap">Devis
+          gratuit</a>
+      </nav>
+      <button class="md:hidden animate-on-scroll w-10 h-10 flex items-center justify-center" id="menuButton">
+        <i class="ri-menu-line text-gray-800 text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden">
+      <nav class="px-4 py-3 bg-white border-t">
+        <div class="flex flex-col space-y-3">
+          <a href="#accueil" class="text-gray-800 hover:text-primary font-medium transition">Accueil</a>
+          <a href="#services" class="text-gray-800 hover:text-primary font-medium transition">Services</a>
+          <a href="#projets" class="text-gray-800 hover:text-primary font-medium transition">Projets</a>
+          <a href="#apropos" class="text-gray-800 hover:text-primary font-medium transition">À propos</a>
+          <a href="#contact" class="text-gray-800 hover:text-primary font-medium transition">Contact</a>
+          <a href="#faq" class="text-gray-800 hover:text-primary font-medium transition">FAQ</a>
+          <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-button font-medium hover:bg-primary/90 transition text-center">Devis gratuit</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section id="accueil" class="min-h-screen pt-24 animate-on-scroll relative overflow-hidden flex items-center"
+    style="background-image: url('https://readdy.ai/api/search-image?query=A%20modern%20web%20design%20studio%20workspace%20with%20a%20gradient%20blue%20to%20teal%20background.%20On%20the%20right%20side%2C%20show%20a%20sleek%20computer%20displaying%20a%20website%20mockup.%20The%20left%20side%20should%20be%20clean%20and%20minimal%20with%20subtle%20design%20elements%2C%20perfect%20for%20text%20overlay.%20The%20transition%20between%20the%20empty%20space%20and%20the%20image%20should%20be%20natural%20and%20seamless.%20Professional%2C%20minimalist%20aesthetic.&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+    <div class="container mx-auto px-4 relative">
+      <div class="w-full flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 z-10">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">Créons ensemble votre
+            présence digitale</h1>
+          <p class="mt-6 text-lg text-gray-700 max-w-lg">Des solutions web professionnelles aux prix les plus
+            compétitifs du marché. Transformez votre vision en réalité numérique.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="#services"
+              class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-primary/90 transition text-center whitespace-nowrap">Découvrez
+              nos services</a>
+            <a href="#contact"
+              class="border border-gray-300 text-gray-800 px-8 py-3 !rounded-button font-medium hover:bg-gray-50 transition text-center whitespace-nowrap">Contactez-nous</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+  </section>
+  <!-- Services Section -->
+  <section id="services" class="py-20 relative">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16 animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nos Services</h2>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Des solutions adaptées à vos besoins et à votre budget pour
+          créer une présence en ligne qui vous ressemble.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Service 1 -->
+        <div
+          class="service-card animate-on-scroll bg-white/80 backdrop-blur rounded shadow-sm p-8 flex flex-col items-center text-center cursor-pointer"
+          data-service="creation">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-code-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Création de site web</h3>
+          <p class="text-gray-600 mb-6">Création de sites web modernes, responsives et optimisés pour tous les
+            appareils.</p>
+          <p class="text-primary font-semibold mt-auto">À partir de 299.-</p>
+        </div>
+        <!-- Service 2 -->
+        <div
+          class="service-card animate-on-scroll bg-white/80 backdrop-blur rounded shadow-sm p-8 flex flex-col items-center text-center cursor-pointer"
+          data-service="redesign">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-refresh-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Redesign</h3>
+          <p class="text-gray-600 mb-6">Donnez un nouveau souffle à votre site existant avec un design moderne et
+            attractif.</p>
+          <p class="text-primary font-semibold mt-auto">À partir de 199.-</p>
+        </div>
+        <!-- Service 3 -->
+        <div
+          class="service-card animate-on-scroll bg-white/80 backdrop-blur rounded shadow-sm p-8 flex flex-col items-center text-center cursor-pointer"
+          data-service="seo">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-line-chart-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Optimisation SEO</h3>
+          <p class="text-gray-600 mb-6">Améliorez votre visibilité sur les moteurs de recherche et attirez plus de
+            visiteurs.</p>
+          <p class="text-primary font-semibold mt-auto">À partir de 99.-</p>
+        </div>
+        <!-- Service 4 -->
+        <div
+          class="service-card bg-white/80 animate-on-scroll backdrop-blur rounded shadow-sm p-8 flex flex-col items-center text-center cursor-pointer"
+          data-service="maintenance">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+            <i class="ri-tools-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Maintenance</h3>
+          <p class="text-gray-600 mb-6">Gardez votre site à jour, sécurisé et performant avec nos services de
+            maintenance.</p>
+          <p class="text-primary font-semibold mt-auto">À partir de 20.-/mois</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Portfolio Section -->
+  <section id="projets" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Nos Réalisations</h2>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Découvrez quelques nos projets réalisés pour nos clients
+          dans différents secteurs d'activité.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="project-card animate-on-scroll rounded overflow-hidden shadow-sm relative cursor-pointer"
+          data-project="1">
+          <div class="w-full h-64 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
+            <i class="ri-building-line text-6xl text-primary/30"></i>
+          </div>
+          <div
+            class="project-overlay absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-6 text-white">
+            <h3 class="text-xl font-semibold mb-2">Projet Innovant #1</h3>
+            <p class="text-center mb-4">Un nouveau projet passionnant en cours de développement. Restez à l'écoute pour
+              découvrir cette réalisation unique.</p>
+            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Bientôt disponible</span>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card animate-on-scroll rounded overflow-hidden shadow-sm relative cursor-pointer"
+          data-project="2">
+          <div class="w-full h-64 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
+            <i class="ri-layout-line text-6xl text-primary/30"></i>
+          </div>
+          <div
+            class="project-overlay absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-6 text-white">
+            <h3 class="text-xl font-semibold mb-2">Projet Innovant #2</h3>
+            <p class="text-center mb-4">Une nouvelle expérience web en préparation. Notre équipe travaille on quelque
+              chose de spécial.</p>
+            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Bientôt disponible</span>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card animate-on-scroll rounded overflow-hidden shadow-sm relative cursor-pointer"
+          data-project="3">
+          <div class="w-full h-64 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
+            <i class="ri-code-line text-6xl text-primary/30"></i>
+          </div>
+          <div
+            class="project-overlay absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-6 text-white">
+            <h3 class="text-xl font-semibold mb-2">Projet Innovant #3</h3>
+            <p class="text-center mb-4">Un projet ambitieux qui repousse les limites du design web. Découvrez-en plus
+              prochainement.</p>
+            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Bientôt disponible</span>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="project-card animate-on-scroll rounded overflow-hidden shadow-sm relative cursor-pointer"
+          data-project="4">
+          <div class="w-full h-64 bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
+            <i class="ri-window-line text-6xl text-primary/30"></i>
+          </div>
+          <div
+            class="project-overlay absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-6 text-white">
+            <h3 class="text-xl font-semibold mb-2">Projet Innovant #4</h3>
+            <p class="text-center mb-4">Une nouvelle approche du design web en développement. Restez connectés pour en
+              savoir plus.</p>
+            <span class="px-3 py-1 bg-white/20 rounded-full text-sm">Bientôt disponible</span>
+          </div>
+        </div>
+        <!-- Project 5 -->
+
+        <!-- Project Modal -->
+        <div class="modal" id="projectModal">
+          <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="text-2xl font-semibold text-gray-900" id="modalTitle">Projet en développement</h3>
+              <button class="modal-close">
+                <i class="ri-close-line text-2xl text-gray-500 hover:text-gray-700"></i>
+              </button>
+            </div>
+            <div class="space-y-4">
+              <p class="text-gray-600" id="modalDescription">Ce projet est actuellement en cours de développement. Notre
+                équipe travaille dur pour créer quelque chose d'exceptionnel.</p>
+              <div class="bg-gray-50 p-4 rounded">
+                <h4 class="font-medium text-gray-900 mb-2">Ce que nous préparons :</h4>
+                <ul class="space-y-2 text-gray-600">
+                  <li class="flex items-center">
+                    <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                    Design moderne et innovant
+                  </li>
+                  <li class="flex items-center">
+                    <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                    Expérience utilisateur optimisée
+                  </li>
+                  <li class="flex items-center">
+                    <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                    Fonctionnalités sur mesure
+                  </li>
+                  <li class="flex items-center">
+                    <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                    Performance et accessibilité
+                  </li>
+                </ul>
+              </div>
+              <p class="text-sm text-gray-500">Date de lancement prévue : Prochainement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Advantages Section -->
+  <section id="apropos" class="py-20 bg-gray-50">
+    <div class="container animate-on-scroll mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Pourquoi Nous Choisir</h2>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Nous nous distinguons par notre approche centrée sur le client
+          et notre engagement à fournir des solutions de qualité.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Service Personnalisé -->
+        <div class="bg-white rounded animate-on-scroll shadow-sm p-8 text-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="ri-user-star-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Service Personnalisé</h3>
+          <p class="text-gray-600">Chaque projet est unique, nous créons des solutions sur mesure adaptées à vos besoins
+            spécifiques.</p>
+          <div class="mt-6 flex justify-center">
+            <span class="text-3xl font-bold text-primary">100%</span>
+          </div>
+        </div>
+
+        <!-- Prix Compétitifs -->
+        <div class="bg-white rounded animate-on-scroll shadow-sm p-8 text-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="ri-price-tag-3-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Prix Compétitifs</h3>
+          <p class="text-gray-600">Des tarifs optimisés et transparents pour offrir le meilleur rapport qualité-prix du marché suisse.</p>
+          <div class="mt-6 flex justify-center">
+            <span class="text-3xl font-bold text-primary">Dès 99.-</span>
+          </div>
+        </div>
+
+        <!-- Support Réactif -->
+        <div class="bg-white rounded animate-on-scroll shadow-sm p-8 text-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="ri-customer-service-2-line text-primary text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Support Réactif</h3>
+          <p class="text-gray-600">Une équipe disponible pour répondre à vos questions et résoudre vos problèmes
+            rapidement.</p>
+          <div class="mt-6 flex justify-center">
+            <span class="text-3xl font-bold text-primary">
+              < 24h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Service Modal -->
+  <div class="modal" id="serviceModal">
+    <div class="modal-content">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-2xl font-semibold text-gray-900" id="serviceModalTitle"></h3>
+        <button class="modal-close">
+          <i class="ri-close-line text-2xl text-gray-500 hover:text-gray-700"></i>
+        </button>
+      </div>
+      <div id="serviceModalContent"></div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 relative">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Ce Que Disent Nos Clients</h2>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Découvrez les témoignages de clients satisfaits qui nous ont
+          fait confiance pour leurs projets web.</p>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-track">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card animate-on-scroll bg-gray-50 rounded p-8 shadow-sm">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Anonyme</h4>
+                <p class="text-sm text-gray-600">Client satisfait</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">"Une équipe professionnelle qui a su comprendre nos besoins et créer un site
+              qui dépasse nos attentes. Le rapport qualité-prix est imbattable!"</p>
+            <div class="mt-4 flex">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card animate-on-scroll bg-gray-50 rounded p-8 shadow-sm">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Anonyme</h4>
+                <p class="text-sm text-gray-600">Client enchanté</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">"Le redesign de notre site a complètement transformé notre image en ligne.
+              Nous avons vu une augmentation de 40% des demandes de contact depuis le lancement."</p>
+            <div class="mt-4 flex">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card animate-on-scroll bg-gray-50 rounded p-8 shadow-sm">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Anonyme</h4>
+                <p class="text-sm text-gray-600">Client ravi</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">"Grâce à l'optimisation SEO, notre restaurant est maintenant en première
+              page de Google. Un excellent investissement!"</p>
+            <div class="mt-4 flex">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+          </div>
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card animate-on-scroll bg-gray-50 rounded p-8 shadow-sm">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Anonyme</h4>
+                <p class="text-sm text-gray-600">Client satisfait</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">"Design élégant et fonctionnel. Notre portfolio n'a jamais été aussi bien
+              mis en valeur. Je recommande vivement!"</p>
+            <div class="mt-4 flex">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+          </div>
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card animate-on-scroll bg-gray-50 rounded p-8 shadow-sm">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Anonyme</h4>
+                <p class="text-sm text-gray-600">Client enchanté</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">"Une expertise professionnelle à prix abordable. Notre présence en ligne
+              s'est considérablement améliorée."</p>
+            <div class="mt-4 flex">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-half-fill text-yellow-400"></i>
+            </div>
+          </div>
+          <!-- Testimonial 6 -->
+          <div class="testimonial-card animate-on-scroll bg-gray-50 rounded p-8 shadow-sm">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Anonyme</h4>
+                <p class="text-sm text-gray-600">Client ravi</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">"Service client exceptionnel! Notre site performe mieux que jamais, avec une
+              augmentation des visites de 70%."</p>
+            <div class="mt-4 flex">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+          </div>
+          <!-- Ajout des nouveaux témoignages après les existants -->
+          <div class="testimonial-card animate-on-scroll bg-gray-50 rounded p-8 shadow-sm">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Anonyme</h4>
+                <p class="text-sm text-gray-600">Client satisfait</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">"Notre plateforme de formation en ligne est parfaitement optimisée. Les
+              retours de nos étudiants sont excellents."</p>
+            <div class="mt-4 flex">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+          </div>
+          <!-- Répéter 5 fois de plus avec des témoignages différents -->
+        </div>
+        <!-- Ajout des indicateurs de position -->
+        <div class="testimonial-indicators flex justify-center gap-2 mt-6"></div>
+      </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="container animate-on-scroll mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Contactez-Nous</h2>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Vous avez un projet en tête ? N'hésitez pas à nous contacter
+          pour discuter de vos besoins et obtenir un devis gratuit.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <form class="bg-white rounded shadow-sm p-8" id="contactForm" onsubmit="return validateAndSubmit(event)">
+            <div class="mb-6">
+              <label for="name" class="block text-gray-700 font-medium mb-2">Nom*</label>
+              <input type="text" id="name"
+                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                placeholder="Votre nom">
+            </div>
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email*</label>
+              <input type="email" id="email"
+                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                placeholder="Votre email">
+            </div>
+            <div class="mb-6">
+              <label for="phone" class="block text-gray-700 font-medium mb-2">Téléphone</label>
+              <input type="tel" id="phone"
+                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                placeholder="Votre numéro de téléphone">
+            </div>
+            <div class="mb-6">
+              <label for="service" class="block text-gray-700 font-medium mb-2">Service</label>
+              <div class="relative">
+                <select id="service"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary appearance-none pr-8">
+                  <option value="">Sélectionnez un service</option>
+                  <option value="creation">Création de site web</option>
+                  <option value="redesign">Redesign</option>
+                  <option value="seo">Optimisation SEO</option>
+                  <option value="maintenance">Maintenance</option>
+                </select>
+                <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                  <i class="ri-arrow-down-s-line text-gray-500"></i>
+                </div>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+              <textarea id="message" rows="5"
+                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                placeholder="Décrivez votre projet"></textarea>
+            </div>
+            <div class="mb-6">
+              <div class="flex items-start mb-4">
+                <div class="flex items-center h-5">
+                  <input type="checkbox" id="terms" name="terms" required
+                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary/50">
+                </div>
+                <label for="terms" class="ml-2 text-sm text-gray-600">
+                  J'ai lu et j'accepte la <a href="#footer" class="text-primary hover:underline policy-link" data-policy="privacy">politique de confidentialité</a> 
+                  et les <a href="#footer" class="text-primary hover:underline policy-link" data-policy="legal">mentions légales</a>
+                </label>
+              </div>
+              <button type="submit"
+                class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition whitespace-nowrap">
+                Demander un devis gratuit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="bg-white rounded shadow-sm p-8">
+            <h3 class="text-xl font-semibold text-gray-900 mb-6">Informations de Contact</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <i class="ri-mail-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Email</h4>
+                  <p class="text-gray-600 mt-1">contactdigitaria@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <i class="ri-phone-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-900">Téléphone</h4>
+                  <p class="text-gray-600 mt-1">+41 78 421 62 11</p>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900 mb-4">Horaires de disponibilité</h4>
+                <p class="text-gray-600">Lundi - Samedi: 9h00 - 18h00</p>
+                <p class="text-gray-600">Dimanche: Fermé</p>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-900 mb-4">Suivez-nous</h4>
+                <div class="flex space-x-4">
+                  <a href="https://x.com/Digitaria_" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+                    <i class="ri-twitter-x-fill text-white"></i>
+                  </a>
+                  <a href="https://www.instagram.com/digitaria_officiel/" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+                    <i class="ri-instagram-fill text-white"></i>
+                  </a>
+                  <a href="https://www.tiktok.com/@digitaria_officiel" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+                    <i class="ri-tiktok-fill text-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-white">
+    <div class="container animate-on-scroll mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Questions Fréquentes</h2>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Trouvez rapidement des réponses à vos questions sur nos services
+          et notre façon de travailler.</p>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item animate-on-scroll mb-4">
+          <button
+            class="w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-all duration-300">
+            <span class="text-lg font-medium text-gray-900">Combien de temps faut-il pour créer un site web ?</span>
+            <i class="ri-add-line text-2xl text-primary transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer overflow-hidden max-h-0">
+            <div class="p-6 bg-white border border-gray-100 rounded-b-lg">
+              <p class="text-gray-600">La durée dépend de la complexité du projet. Un site vitrine simple peut être
+                réalisé en 1-2 semaines, tandis qu'un projet plus complexe peut prendre 1-2 mois. Nous vous tenons
+                toujours au courant de nos avancés par e-mail.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item animate-on-scroll mb-4">
+          <button
+            class="w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-all duration-300">
+            <span class="text-lg font-medium text-gray-900">Comment se déroule le processus de création ?</span>
+            <i class="ri-add-line text-2xl text-primary transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer overflow-hidden max-h-0">
+            <div class="p-6 bg-white border border-gray-100 rounded-b-lg">
+              <p class="text-gray-600">Notre processus se déroule en 4 étapes : analyse des besoins, conception du
+                design, développement, et mise en ligne. Vous êtes impliqué à chaque étape pour garantir que le résultat
+                corresponde parfaitement à vos attentes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item animate-on-scroll mb-4">
+          <button
+            class="w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-all duration-300">
+            <span class="text-lg font-medium text-gray-900">Vous occupez-vous de l'hébergement du site web?</span>
+            <i class="ri-add-line text-2xl text-primary transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer overflow-hidden max-h-0">
+            <div class="p-6 bg-white border border-gray-100 rounded-b-lg">
+              <p class="text-gray-600">Oui, nous nous occupons de d'héberger votre site web si vous n'en avez pas encore
+                un. Dans le cas où vous nous demandés un redisign, une optimisation SEO ou de la maintenance, nous
+                faisons nos modifications en utilisant votre hébergeur actuel. S'occuper de l'hébergement participe à
+                une augmentation du tarif pour couvrir ces frais.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item animate-on-scroll mb-4">
+          <button
+            class="w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-all duration-300">
+            <span class="text-lg font-medium text-gray-900">Quels sont les modes de paiement acceptés ?</span>
+            <i class="ri-add-line text-2xl text-primary transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer overflow-hidden max-h-0">
+            <div class="p-6 bg-white border border-gray-100 rounded-b-lg">
+              <p class="text-gray-600">Nous acceptons les paiements par TWINT, carte bancaire et PayPal. Le paiement
+                s'effectue en deux fois : un acompte de 50% à la commande, et le
+                solde à la livraison.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item animate-on-scroll mb-4">
+          <button
+            class="w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-all duration-300">
+            <span class="text-lg font-medium text-gray-900">Le site sera-t-il optimisé pour les téléphones ?</span>
+            <i class="ri-add-line text-2xl text-primary transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer overflow-hidden max-h-0">
+            <div class="p-6 bg-white border border-gray-100 rounded-b-lg">
+              <p class="text-gray-600">Oui, nous nous occupons de rendre l'expérience utilisateur optimisée pour tous
+                types d'écrans (ordinateur, tablette, téléphone).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <a href="#accueil" class="h-12 inline-block mb-4">
+            <img src="./media/image.png" alt="Logo" class="h-full w-auto">
+          </a>
+          <p class="text-gray-400 mt-4">Créons ensemble votre présence digitale avec des solutions web professionnelles
+            aux meilleurs prix.</p>
+          <div class="mt-6 flex space-x-4">
+            <a href="https://x.com/Digitaria_" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+              <i class="ri-twitter-x-fill text-white"></i>
+            </a>
+            <a href="https://www.instagram.com/digitaria_officiel/" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+              <i class="ri-instagram-fill text-white"></i>
+            </a>
+            <a href="https://www.tiktok.com/@digitaria_officiel" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition">
+              <i class="ri-tiktok-fill text-white"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Liens Rapides</h4>
+          <ul class="space-y-3">
+            <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+            <li><a href="#projets" class="text-gray-400 hover:text-white transition">Projets</a></li>
+            <li><a href="#apropos" class="text-gray-400 hover:text-white transition">À propos</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+            <li><a href="#faq" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#services" data-service="creation" class="text-gray-400 hover:text-white transition">Création
+                de site web</a></li>
+            <li><a href="#services" data-service="redesign"
+                class="text-gray-400 hover:text-white transition">Redesign</a></li>
+            <li><a href="#services" data-service="seo" class="text-gray-400 hover:text-white transition">Optimisation
+                SEO</a></li>
+            <li><a href="#services" data-service="maintenance"
+                class="text-gray-400 hover:text-white transition">Maintenance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+          <p class="text-gray-400 mb-4">Inscrivez-vous pour recevoir nos dernières actualités et offres spéciales.</p>
+          <form class="mt-4" id="newsletterForm">
+            <div class="flex h-[46px]">
+              <input type="email" id="newsletterEmail"
+                class="w-[65%] px-4 py-3 bg-gray-800 border-none rounded-l focus:outline-none focus:ring-2 focus:ring-primary/50 text-white"
+                placeholder="Votre email" required>
+              <button type="submit"
+                class="bg-primary w-[35%] px-6 text-white font-medium hover:bg-primary/90 transition whitespace-nowrap rounded-r-button flex items-center justify-center">
+                S'inscrire
+              </button>
+            </div>
+          </form>
+          <div class="mt-6 flex items-center space-x-4">
+            <span class="text-gray-400">Paiement sécurisé</span>
+            <div class="flex space-x-2">
+              <img src="./media/Capture_d_écran_2025-05-18_155351-removebg-preview.png" alt="Logo TWINT"
+                class="h-[18px] w-auto my-auto">
+              <i class="ri-mastercard-fill text-gray-400 text-xl"></i>
+              <i class="ri-paypal-fill text-gray-400 text-xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm">&copy; 2025 Digitaria. Tous droits réservés.</p>
+          <div class="mt-4 md:mt-0">
+            <ul class="flex space-x-6">
+              <li><a href="./annexe/Mentions_legales.md" download class="text-gray-400 hover:text-white text-sm transition">Mentions légales</a></li>
+              <li><a href="./annexe/Politiques_de_confidentialité.md" download class="text-gray-400 hover:text-white text-sm transition">Politique de confidentialité</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="bg-pattern"></div>
+</body>
+
+</html>
