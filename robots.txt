@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://digitaria.ch/sitemap.xml
