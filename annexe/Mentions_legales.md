@@ -6,14 +6,14 @@
 **Statut** : Entreprise individuelle  
 **Responsable de la publication** : Maxime  
 **Adresse** : Disponible sur demande  
-**Email de contact** : contact@digitaria.ch  
+**Email de contact** : contactdigitaria@gmail.com  
 **Nom de domaine** : [https://www.digitaria.ch](https://www.digitaria.ch)
 
 ## 2. Hébergeur
 
-**Nom de l'hébergeur** : Infomaniak  
-**Adresse** : Rue Eugène-Marziano 25, 1227 Genève 
-**Site web** : https://www.infomaniak.com/fr 
+**Nom de l'hébergeur** : GitHub Pages (GitHub, Inc.)  
+**Adresse** : 88 Colin P. Kelly Jr St, San Francisco, CA 94107, USA 
+**Site web** : [https://pages.github.com/](https://pages.github.com/) 
 
 ## 3. Propriété intellectuelle
 

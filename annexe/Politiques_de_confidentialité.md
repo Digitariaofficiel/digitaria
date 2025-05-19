@@ -14,7 +14,7 @@ Dernière mise à jour le 20 mars 2024. Nous nous réservons le droit de modifie
 ## 2. Responsable du traitement  
 **Digitaria** – Entreprise individuelle  
 Adresse : disponible sur demande  
-Email : contact@digitaria.ch  
+Email : contactdigitaria@gmail.com 
 
 ## 3. Collecte des Données
 
@@ -49,7 +49,7 @@ Le traitement repose sur votre consentement explicite et sur nos intérêts lég
 
 ### 5.2 Exercice des droits :
 Vous pouvez exercer vos droits à tout moment en nous contactant à :  
-**contact@digitaria.ch**  
+**contactdigitaria@gmail.com**  
 Nous nous engageons à répondre dans les meilleurs délais.
 
 ## 6. Cookies et outils de suivi
@@ -81,4 +81,4 @@ Nous nous réservons le droit de modifier cette politique de confidentialité à
 
 ## 10. Contact  
 Pour toute question ou demande relative à cette politique ou à vos données personnelles, contactez-nous à :  
-**contact@digitaria.ch**
+**contactdigitaria.ch**
