@@ -114,17 +114,52 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Project styles */
 .project-card {
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: white;
+  position: relative;
+  height: 250px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.project-card:active {
+  transform: scale(0.98);
+}
+.project-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0.1));
+  transition: all 0.3s ease;
 }
 .project-overlay {
+  position: absolute;
+  inset: 0;
   opacity: 0;
-  transition: all 0.5s ease;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  background: rgba(59, 130, 246, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: white;
+  text-align: center;
 }
+
 .project-card:hover .project-overlay {
   opacity: 1;
+  visibility: visible;
 }
-.project-card:hover {
-  transform: translateY(-8px);
+
+@media (max-width: 768px) {
+  .project-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* Service cards */
@@ -170,6 +205,35 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .service-card:hover .w-16 {
   background-color: rgba(59, 130, 246, 0.2);
+}
+.service-card .cta-link {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;  /* Réduit de 2rem à 1rem */
+  position: relative;
+  justify-content: center;
+}
+
+/* Sur mobile, toujours visible */
+@media (max-width: 768px) {
+  .service-card .cta-link {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1.25rem;  /* Réduit de 2.5rem à 1.25rem */
+  }
+}
+
+/* Sur desktop, visible uniquement au hover */
+@media (min-width: 769px) {
+  .service-card:hover .cta-link {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* Navigation link styles */
