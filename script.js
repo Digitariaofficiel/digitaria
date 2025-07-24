@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </ol>
 </div>
 <div class="mt-8 p-4 bg-primary/5 rounded">
-<p class="text-primary font-medium">À partir de 299 CHF</p>
+<p class="text-primary font-medium">À partir de 499 CHF</p>
 <p class="text-sm text-gray-600 mt-1">Prix final selon les fonctionnalités demandées</p>
 </div>
 <div class="mt-4 text-center">
@@ -341,14 +341,106 @@ Contactez-nous pour plus d'informations →
   const modalDescription = document.getElementById("modalDescription");
   const projectCards = document.querySelectorAll(".project-card");
   const modalClose = document.querySelector(".modal-close");
+  
+  // Project details object
+  const projectDetails = {
+    1: {
+      title: "CUTSBYIMG",
+      description: "Site web professionnel pour un salon de coiffure moderne.",
+      url: "https://cutsbyimg.ch", // Ajouter l'URL du site
+      content: `
+        <div class="space-y-4">
+          <p class="text-gray-600">Site web réalisé pour CUTSBYIMG, un salon de coiffure proposant des services de qualité dans un cadre moderne et accueillant.</p>
+          <div class="bg-gray-50 p-4 rounded">
+            <h4 class="font-medium text-gray-900 mb-2">Fonctionnalités réalisées :</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Design responsive et moderne
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Présentation des services
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Système de réservation en ligne
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Informations de contact et horaires
+              </li>
+            </ul>
+          </div>
+          <div class="bg-primary/5 p-4 rounded">
+            <p class="text-primary font-medium">Type de projet :</p>
+            <p class="text-gray-600">Site vitrine pour salon de coiffure</p>
+          </div>
+          <div class="flex justify-center mt-6">
+            <a href="https://cutsbyimg.ch" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 hover:shadow-lg active:bg-primary/80 transition-all duration-200 transform hover:-translate-y-0.5">
+              <i class="ri-external-link-line"></i>
+              Visiter le site
+            </a>
+          </div>
+        </div>
+      `
+    }
+  };
+
   projectCards.forEach((card) => {
     card.addEventListener("click", () => {
       const projectId = card.getAttribute("data-project");
-      modalTitle.textContent = `Projet Innovant #${projectId}`;
+      const project = projectDetails[projectId];
+      
+      if (project) {
+        modalTitle.textContent = project.title;
+        modalDescription.innerHTML = project.content;
+      } else {
+        modalTitle.textContent = `Projet Innovant #${projectId}`;
+        modalDescription.innerHTML = `
+          <div class="space-y-4">
+            <p class="text-gray-600">Ce projet est actuellement en cours de développement. Notre équipe travaille dur pour créer quelque chose d'exceptionnel.</p>
+            <div class="bg-gray-50 p-4 rounded">
+              <h4 class="font-medium text-gray-900 mb-2">Ce que nous préparons :</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                  Design moderne et innovant
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                  Expérience utilisateur optimisée
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                  Fonctionnalités sur mesure
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                  Performance et accessibilité
+                </li>
+              </ul>
+            </div>
+            <p class="text-sm text-gray-500">Date de lancement prévue : Prochainement</p>
+            <div class="flex justify-center mt-6">
+              <div class="inline-flex items-center gap-2 bg-gray-300 text-gray-500 px-6 py-3 rounded-button font-medium cursor-not-allowed">
+                <i class="ri-time-line"></i>
+                Bientôt disponible
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      
       modal.classList.add("active");
       document.body.style.overflow = "hidden";
+      
+      // Fix images in modal after content is loaded
+      setTimeout(fixImageCropping, 100);
     });
   });
+  
   modalClose.addEventListener("click", () => {
     modal.classList.remove("active");
     document.body.style.overflow = "";
@@ -658,4 +750,42 @@ window.onbeforeunload = function () {
 document.addEventListener('DOMContentLoaded', function() {
   window.scrollTo(0, 0);
 });
+
+  // Fix image cropping issues
+  function fixImageCropping() {
+    // Fix project card images
+    const projectImages = document.querySelectorAll('.project-card img, .portfolio-image img');
+    projectImages.forEach(img => {
+      img.style.objectFit = 'cover';
+      img.style.objectPosition = 'center';
+      img.style.width = '100%';
+      img.style.height = '100%';
+    });
+
+    // Fix modal images
+    const modalImages = document.querySelectorAll('#projectModal img, #serviceModal img');
+    modalImages.forEach(img => {
+      img.style.objectFit = 'contain';
+      img.style.objectPosition = 'center';
+      img.style.maxWidth = '100%';
+      img.style.height = 'auto';
+    });
+
+    // Fix hero section images
+    const heroImages = document.querySelectorAll('.hero img, .hero-image img');
+    heroImages.forEach(img => {
+      img.style.objectFit = 'cover';
+      img.style.objectPosition = 'center';
+      img.style.width = '100%';
+      img.style.height = '100%';
+    });
+  }
+
+  // Call the fix function
+  fixImageCropping();
+
+  // Re-apply fixes when images load
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('load', fixImageCropping);
+  });
 });
