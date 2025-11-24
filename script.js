@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
+
 
   const serviceModal = document.getElementById("serviceModal");
   const serviceModalTitle = document.getElementById("serviceModalTitle");
@@ -70,7 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
 Contactez-nous pour plus d'informations →
 </a>
 </div>
-</div>`,    },
+</div>`,
+    },
     redesign: {
       title: "Redesign de Site Web",
       content: `
@@ -103,7 +104,8 @@ Contactez-nous pour plus d'informations →
 Contactez-nous pour plus d'informations →
 </a>
 </div>
-</div>`,    },
+</div>`,
+    },
     seo: {
       title: "Optimisation SEO",
       content: `
@@ -136,7 +138,8 @@ Contactez-nous pour plus d'informations →
 Contactez-nous pour plus d'informations →
 </a>
 </div>
-</div>`,    },
+</div>`,
+    },
     maintenance: {
       title: "Maintenance",
       content: `
@@ -169,7 +172,8 @@ Contactez-nous pour plus d'informations →
 Contactez-nous pour plus d'informations →
 </a>
 </div>
-</div>`,    },
+</div>`,
+    },
   };
 
   serviceCards.forEach((card) => {
@@ -220,18 +224,18 @@ Contactez-nous pour plus d'informations →
   const testimonialTrack = document.querySelector('.testimonial-track');
   const testimonialNav = document.createElement('div');
   testimonialNav.className = 'testimonial-nav';
-  
+
   const prevButton = document.createElement('button');
   prevButton.className = 'testimonial-button';
   prevButton.innerHTML = '<i class="ri-arrow-left-s-line text-xl"></i>';
-  
+
   const nextButton = document.createElement('button');
   nextButton.className = 'testimonial-button';
   nextButton.innerHTML = '<i class="ri-arrow-right-s-line text-xl"></i>';
-  
+
   testimonialNav.appendChild(prevButton);
   testimonialNav.appendChild(nextButton);
-  
+
   document.querySelector('.testimonial-slider').appendChild(testimonialNav);
 
   let currentTestimonial = 0;
@@ -243,7 +247,7 @@ Contactez-nous pour plus d'informations →
   function startAutoSlide() {
     // Réinitialisation de l'intervalle existant
     if (autoSlideInterval) clearInterval(autoSlideInterval);
-    
+
     autoSlideInterval = setInterval(() => {
       // Passage au groupe suivant
       currentTestimonial = (currentTestimonial + 3) % (maxGroups * 3);
@@ -274,13 +278,13 @@ Contactez-nous pour plus d'informations →
   // Mise à jour de l'affichage des témoignages
   function updateTestimonials() {
     const groupIndex = Math.floor(currentTestimonial / 3);
-    
+
     // Mise à jour de l'état actif des cartes
     testimonials.forEach((card, index) => {
       const cardGroup = Math.floor(index / 3);
       card.classList.toggle('active', cardGroup === groupIndex);
     });
-    
+
     // Animation de défilement
     testimonialTrack.style.transform = `translateX(-${groupIndex * 100}%)`;
     updateIndicators();
@@ -299,7 +303,7 @@ Contactez-nous pour plus d'informations →
   // Création des indicateurs
   const indicatorsContainer = document.querySelector('.testimonial-indicators');
   const numGroups = Math.ceil(testimonials.length / 3);
-  
+
   for (let i = 0; i < numGroups; i++) {
     const indicator = document.createElement('div');
     indicator.className = 'testimonial-indicator';
@@ -341,7 +345,7 @@ Contactez-nous pour plus d'informations →
   const modalDescription = document.getElementById("modalDescription");
   const projectCards = document.querySelectorAll(".project-card");
   const modalClose = document.querySelector(".modal-close");
-  
+
   // Project details object
   const projectDetails = {
     1: {
@@ -385,6 +389,94 @@ Contactez-nous pour plus d'informations →
           </div>
         </div>
       `
+    },
+    2: {
+      title: "Nutrisanté",
+      description: "Site web professionnel pour un cabinet de nutrition et santé.",
+      url: "https://lmnutrisante.ch", // Ajouter l'URL du site
+      content: `
+        <div class="space-y-4">
+          <p class="text-gray-600">Site web réalisé pour Nutrisanté, un cabinet de nutrition proposant des services de qualité dans un cadre moderne et accueillant.</p>
+          <div class="bg-gray-50 p-4 rounded">
+            <h4 class="font-medium text-gray-900 mb-2">Fonctionnalités réalisées :</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Design responsive et moderne
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Présentation des prestations et tarifs
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Affichage des horaires d'ouverture
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Informations de contact et localisation
+              </li>
+            </ul>
+          </div>
+          <div class="bg-primary/5 p-4 rounded">
+            <p class="text-primary font-medium">Type de projet :</p>
+            <p class="text-gray-600">Site vitrine pour cabinet de nutrition</p>
+          </div>
+          <div class="flex justify-center mt-6">
+            <a href="https://lmnutrisante.ch" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 hover:shadow-lg active:bg-primary/80 transition-all duration-200 transform hover:-translate-y-0.5">
+              <i class="ri-external-link-line"></i>
+              Visiter le site
+            </a>
+          </div>
+        </div>
+      `
+    },
+    3: {
+      title: "Parking Ruchonnet",
+      description: "Site web professionnel pour un parking privé et vente de motos d'occasion.",
+      url: "https://parking-ruchonnet-gare.ch", // Ajouter l'URL du site
+      content: `
+        <div class="space-y-4">
+          <p class="text-gray-600">Site web réalisé pour Parking Ruchonnet, un parking privé proposant des services de qualité dans un cadre professionnel et accueillant.</p>
+          <div class="bg-gray-50 p-4 rounded">
+            <h4 class="font-medium text-gray-900 mb-2">Fonctionnalités réalisées :</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Design responsive et moderne
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Présentation des prestations et tarifs
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Affichage des horaires d'ouverture
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Présentation du matériel d'occasion disponible
+              </li>
+              <li class="flex items-center">
+                <i class="ri-checkbox-circle-line text-primary mr-2"></i>
+                Informations de contact et localisation
+              </li>
+            </ul>
+          </div>
+          <div class="bg-primary/5 p-4 rounded">
+            <p class="text-primary font-medium">Type de projet :</p>
+            <p class="text-gray-600">Site vitrine pour parking privé</p>
+          </div>
+          <div class="flex justify-center mt-6">
+            <a href="https://parking-ruchonnet-gare.ch" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-primary/90 hover:shadow-lg active:bg-primary/80 transition-all duration-200 transform hover:-translate-y-0.5">
+              <i class="ri-external-link-line"></i>
+              Visiter le site
+            </a>
+          </div>
+        </div>
+      `
     }
   };
 
@@ -392,7 +484,7 @@ Contactez-nous pour plus d'informations →
     card.addEventListener("click", () => {
       const projectId = card.getAttribute("data-project");
       const project = projectDetails[projectId];
-      
+
       if (project) {
         modalTitle.textContent = project.title;
         modalDescription.innerHTML = project.content;
@@ -432,15 +524,15 @@ Contactez-nous pour plus d'informations →
           </div>
         `;
       }
-      
+
       modal.classList.add("active");
       document.body.style.overflow = "hidden";
-      
+
       // Fix images in modal after content is loaded
       setTimeout(fixImageCropping, 100);
     });
   });
-  
+
   modalClose.addEventListener("click", () => {
     modal.classList.remove("active");
     document.body.style.overflow = "";
@@ -503,10 +595,10 @@ Contactez-nous pour plus d'informations →
   const newsletterInput = document.getElementById('newsletterEmail');
   const newsletterMessage = document.getElementById('newsletterMessage');
 
-  newsletterForm.addEventListener('submit', function(e) {
+  newsletterForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const email = newsletterInput.value;
-    
+
     if (!email || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       showNewsletterMessage('Veuillez entrer une adresse email valide', 'error');
       return;
@@ -527,7 +619,7 @@ Contactez-nous pour plus d'informations →
 
   // Ajout des gestionnaires d'événements pour fermer la modal des services
   const serviceModalClose = serviceModal.querySelector(".modal-close");
-  
+
   serviceModalClose.addEventListener("click", () => {
     serviceModal.classList.remove("active");
     document.body.style.overflow = "";
@@ -580,7 +672,7 @@ Contactez-nous pour plus d'informations →
       const faqItem = button.parentElement;
       const answer = button.nextElementSibling;
       const icon = button.querySelector('i');
-      
+
       // Close all other FAQ items
       document.querySelectorAll('.faq-item').forEach(item => {
         if (item !== faqItem) {
@@ -589,7 +681,7 @@ Contactez-nous pour plus d'informations →
           item.classList.remove('active');
         }
       });
-      
+
       // Toggle current FAQ item
       if (answer.style.maxHeight) {
         answer.style.maxHeight = null;
@@ -611,7 +703,7 @@ Contactez-nous pour plus d'informations →
 
   function validateAndSubmit(event) {
     event.preventDefault();
-    
+
     // Récupération des valeurs
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -621,18 +713,18 @@ Contactez-nous pour plus d'informations →
 
     // Validation
     if (!name) {
-        showNotification('Veuillez entrer votre nom', 'error');
-        return false;
+      showNotification('Veuillez entrer votre nom', 'error');
+      return false;
     }
 
     if (!email || !isValidEmail(email)) {
-        showNotification('Veuillez entrer une adresse email valide', 'error');
-        return false;
+      showNotification('Veuillez entrer une adresse email valide', 'error');
+      return false;
     }
 
     if (!service) {
-        showNotification('Veuillez sélectionner un service', 'error');
-        return false;
+      showNotification('Veuillez sélectionner un service', 'error');
+      return false;
     }
 
     // Ajout d'un indicateur de chargement
@@ -642,44 +734,44 @@ Contactez-nous pour plus d'informations →
     submitButton.disabled = true;
 
     const templateParams = {
-        from_name: name,
-        to_email: "contactdigitaria@gmail.com",
-        message: message || "Pas de message",
-        phone_number: phone,
-        selected_service: service,
-        from_email: email,
-        'g-recaptcha-response': '',
-        host: window.location.hostname
+      from_name: name,
+      to_email: "contactdigitaria@gmail.com",
+      message: message || "Pas de message",
+      phone_number: phone,
+      selected_service: service,
+      from_email: email,
+      'g-recaptcha-response': '',
+      host: window.location.hostname
     };
 
     emailjs.send(config.emailjs.serviceId, config.emailjs.templateId, templateParams)
-        .then(function(response) {
-            console.log('Succès:', response);
-            showNotification('Message envoyé avec succès !', 'success');
-            document.getElementById('contactForm').reset();
-        })
-        .catch(function(error) {
-            console.error('Erreur EmailJS:', error);
-            if (error.text) {
-                showNotification(error.text, 'error');
-            } else {
-                showNotification('Une erreur est survenue lors de l\'envoi. Veuillez réessayer plus tard.', 'error');
-            }
-        })
-        .finally(function() {
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        });
+      .then(function (response) {
+        console.log('Succès:', response);
+        showNotification('Message envoyé avec succès !', 'success');
+        document.getElementById('contactForm').reset();
+      })
+      .catch(function (error) {
+        console.error('Erreur EmailJS:', error);
+        if (error.text) {
+          showNotification(error.text, 'error');
+        } else {
+          showNotification('Une erreur est survenue lors de l\'envoi. Veuillez réessayer plus tard.', 'error');
+        }
+      })
+      .finally(function () {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      });
 
     return false;
-}
+  }
 
-function isValidEmail(email) {
+  function isValidEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
-}
+  }
 
-// Ajouter gestionnaire pour les liens de service dans le footer
+  // Ajouter gestionnaire pour les liens de service dans le footer
   document.querySelectorAll('footer a[data-service]').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -689,7 +781,7 @@ function isValidEmail(email) {
       serviceModalContent.innerHTML = serviceDetail.content;
       serviceModal.classList.add("active");
       document.body.style.overflow = "hidden";
-      
+
       // Scroll jusqu'à la section services
       const servicesSection = document.querySelector('#services');
       window.scrollTo({
@@ -700,30 +792,30 @@ function isValidEmail(email) {
   });
 
   // Ajouter cette fonction pour les notifications
-function showNotification(message, type) {
+  function showNotification(message, type) {
     const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        customClass: {
-            popup: 'rounded-lg',
-            title: 'font-medium text-sm',
-        },
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      customClass: {
+        popup: 'rounded-lg',
+        title: 'font-medium text-sm',
+      },
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
     });
 
     Toast.fire({
-        icon: type,
-        title: message,
-        background: type === 'success' ? '#3b82f6' : '#ef4444',
-        color: '#ffffff'
+      icon: type,
+      title: message,
+      background: type === 'success' ? '#3b82f6' : '#ef4444',
+      color: '#ffffff'
     });
-}
+  }
 
   // Gestion des liens de politique
   document.querySelectorAll('.policy-link').forEach(link => {
@@ -741,15 +833,15 @@ function showNotification(message, type) {
     });
   });
 
-// Force scroll to top on page load
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
+  // Force scroll to top on page load
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 
-// Alternative method for browsers that might block onbeforeunload
-document.addEventListener('DOMContentLoaded', function() {
-  window.scrollTo(0, 0);
-});
+  // Alternative method for browsers that might block onbeforeunload
+  document.addEventListener('DOMContentLoaded', function () {
+    window.scrollTo(0, 0);
+  });
 
   // Fix image cropping issues
   function fixImageCropping() {
